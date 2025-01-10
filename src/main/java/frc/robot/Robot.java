@@ -15,6 +15,7 @@ public class Robot extends TimedRobot {
   Field2d jetsonField = new Field2d();
 
   private RobotContainer m_robotContainer;
+  CavbotsPhotonCamera cpc = new CavbotsPhotonCamera("USB_Camera");
 
   @Override
   public void robotInit() {
@@ -25,7 +26,7 @@ public class Robot extends TimedRobot {
   @Override
   public void robotPeriodic() {
     CommandScheduler.getInstance().run();
-    jetsonField.setRobotPose(GetJetsonData.getNVIDIAPose2d());
+    System.out.println(cpc.getNumTargets());
   }
 
   @Override

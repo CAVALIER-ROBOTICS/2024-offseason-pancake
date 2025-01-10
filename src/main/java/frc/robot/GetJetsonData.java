@@ -48,7 +48,7 @@ public class GetJetsonData {
     public static Pose2d getNVIDIAPose2d() {
         Pose3d fieldToTag = getFieldToTagTransform();
         Transform3d camToTag = getCamToTagTransform();
-        System.out.println(camToTag);
+        // System.out.println(camToTag);
         Pose3d p = fieldToTag.transformBy(camToTag.inverse());
         return new Pose2d(new Translation2d(p.getX(),p.getY()),new Rotation2d(p.getRotation().getY()));
     }

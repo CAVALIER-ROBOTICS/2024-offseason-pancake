@@ -14,18 +14,19 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.Constants;
 import frc.robot.Constants.SwerveConstants;
+import frc.robot.CycloidLibrary.NeoKrakenModule;
 import frc.robot.CycloidLibrary.NeoSteveModule;
 
 public class DriveSubsystem extends SubsystemBase {
-  NeoSteveModule fleft, fright, bleft, bright;
+  NeoKrakenModule fleft, fright, bleft, bright;
 
   Pigeon2 pigeon = new Pigeon2(Constants.PIGEON_ID);
 
   public DriveSubsystem() {
-    fleft = new NeoSteveModule(Constants.FLEFT_DRIVE_ID, Constants.FLEFT_STEER_ID, Constants.FLEFT_CANCODER_ID, SwerveConstants.FLEFT_OFFSET);
-    fright = new NeoSteveModule(Constants.FRIGHT_DRIVE_ID, Constants.FRIGHT_STEER_ID, Constants.FRIGHT_CANCODER_ID, SwerveConstants.FRIGHT_OFFSET);
-    bleft = new NeoSteveModule(Constants.BLEFT_DRIVE_ID, Constants.BLEFT_STEER_ID, Constants.BLEFT_CANCODER_ID, SwerveConstants.BLEFT_OFFSET);
-    bright = new NeoSteveModule(Constants.BRIGHT_DRIVE_ID, Constants.BRIGHT_STEER_ID, Constants.BRIGHT_CANCODER_ID, SwerveConstants.BRIGHT_OFFSET);
+    fleft = new NeoKrakenModule(Constants.FLEFT_DRIVE_ID, Constants.FLEFT_STEER_ID, Constants.FLEFT_CANCODER_ID, SwerveConstants.FLEFT_OFFSET);
+    fright = new NeoKrakenModule(Constants.FRIGHT_DRIVE_ID, Constants.FRIGHT_STEER_ID, Constants.FRIGHT_CANCODER_ID, SwerveConstants.FRIGHT_OFFSET);
+    bleft = new NeoKrakenModule(Constants.BLEFT_DRIVE_ID, Constants.BLEFT_STEER_ID, Constants.BLEFT_CANCODER_ID, SwerveConstants.BLEFT_OFFSET);
+    bright = new NeoKrakenModule(Constants.BRIGHT_DRIVE_ID, Constants.BRIGHT_STEER_ID, Constants.BRIGHT_CANCODER_ID, SwerveConstants.BRIGHT_OFFSET);
   }
 
   public void setModuleStates(SwerveModuleState[] states) {
@@ -37,13 +38,6 @@ public class DriveSubsystem extends SubsystemBase {
     // fright.setPercentOutput(.5);
     // bleft.setPercentOutput(.5);
     // bright.setPercentOutput(.5);
-  }
-
-  public void setDriveMotorRampRate(double ramp) {
-    fleft.configureRampRate(ramp);
-    fright.configureRampRate(ramp);
-    bleft.configureRampRate(ramp);
-    bright.configureRampRate(ramp);
   }
 
   private double clamp(double x, double min, double max) {

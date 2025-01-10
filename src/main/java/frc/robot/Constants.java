@@ -64,10 +64,10 @@ public final class Constants {
     // public static final double BLEFT_OFFSET = -2.16444689170664;
     // public static final double BRIGHT_OFFSET = -0.193281579273591 - Math.toRadians(2);
 
-    public static final double FLEFT_OFFSET = -0.138058270909708;
-    public static final double FRIGHT_OFFSET = 2.84706834231575;
-    public static final double BLEFT_OFFSET = -0.467864140305121;
-    public static final double BRIGHT_OFFSET = 0.877437010670587;
+    public static final double FLEFT_OFFSET = -0.148796136424907;
+    public static final double FRIGHT_OFFSET = 2.621573166496561;
+    public static final double BLEFT_OFFSET = 0.743980682124536;
+    public static final double BRIGHT_OFFSET = 2.785709110800324 + Math.PI;
 
     public static final double BOT_LENGTH = .6858;
     public static double L = BOT_LENGTH;
@@ -76,8 +76,8 @@ public final class Constants {
     public static final SwerveDriveKinematics m_kinematics = new SwerveDriveKinematics(
     new Translation2d(L/2, W/2),
     new Translation2d(L/2, -W/2),
-    new Translation2d(-L/2, -W/2),
-    new Translation2d(-L/2, W/2)
+    new Translation2d(-L/2, W/2),
+    new Translation2d(-L/2, -W/2)
     );
 
     public static final Pose2d KATY_TEST_FIELD_INIT_POSE = new Pose2d(15.3, 5.53, Rotation2d.fromRadians(0));
@@ -123,8 +123,8 @@ public final class Constants {
   public static final int PIGEON_ID = 13;
   public static final int FLEFT_CANCODER_ID = 20;
   public static final int FRIGHT_CANCODER_ID = 21;
-  public static final int BLEFT_CANCODER_ID = 23;
-  public static final int BRIGHT_CANCODER_ID = 22;
+  public static final int BLEFT_CANCODER_ID = 22;
+  public static final int BRIGHT_CANCODER_ID = 23;
 
   public static final int RIGHT_SHOOTER_PIVOT_ID = 11;
   public static final int LEFT_SHOOTER_PIVOT_ID = 12;
